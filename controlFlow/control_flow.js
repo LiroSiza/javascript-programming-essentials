@@ -1,5 +1,5 @@
-let userRole = "admin";
-let accessLevel;
+var userRole = "admin";
+var accessLevel;
 let isLoggedIn = true;
 let userMessage;
 let userType = "subscriber";
@@ -46,3 +46,25 @@ console.log("User Category:", userCategory);
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 console.log("Authentication Status:", authenticationStatus);
+
+// +++++++++++++++ PRACTICE TASK +++++++++++++++++++
+var userRole = "Enrolled Member";
+var accessLevel = "";
+
+switch (userRole) {
+    case "Employee":
+        accessLevel = "Dietary Services";
+        break;
+    case "Enrolled Member":
+        accessLevel = "Dietary Services and one-on-one interaction with a dietician";
+        break;
+    case "subscriber":
+        accessLevel = "Partial access to facilitate Dietary Services only";
+        break;
+    case "Non-Subscriber":
+        accessLevel = "Need to enroll or at least subscribe first to avail this facility - Dietary Services";
+        break;
+    default:
+        accessLevel = "Unknown";
+}
+console.log("Is eligible to avai: ", accessLevel);
