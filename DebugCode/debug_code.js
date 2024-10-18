@@ -6,7 +6,8 @@
     // Check if inputs are valid numbers
     if (!isNaN(num1) && !isNaN(num2)) {
     // Perform the operation
-        let result = multiply(num1, num2);
+        let result = [];
+        result = operations(num1, num2);
 
         // Display the result
         displayResult(result);
@@ -15,17 +16,28 @@
     }
 }
 
-function multiply(a, b) {
+function operations(a, b) {
+    let results = [];
     // Introduce a debugger statement to pause execution
     debugger;
+    try{
+        results.push(a+b);
+        results.push(a*b);
+        results.push(a/b);
+    }catch (error){
+        console.log("Error de operación");
+    }
 
-    // Multiply the numbers
-    return a * b;
+    return results;
 }
 
 function displayResult(result) {
     // Display the result in the paragraph element
-    const resultElement = document.getElementById('result');
-    resultElement.textContent = `The result is: ${result}`;
+    const resultElement1 = document.getElementById('resultAdd');
+    resultElement1.textContent = `The result is: ${result[0]}`;
+    const resultElement2 = document.getElementById('resultMultiply');
+    resultElement2.textContent = `The result is: ${result[1]}`;
+    const resultElement3 = document.getElementById('resultDivision');
+    resultElement3.textContent = `The result is: ${result[2]}`;
 }
         
